@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RiELA YOUTH</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="js/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>RiELA YOUTH</h1>
+    <nav>
+      <ul>
+        <li><a href="#Beranda">Beranda</a></li>
+        <li><a href="#Produk">Produk</a></li>
+        <li><a href="#keranjang">Keranjang</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="Beranda">
+    <h2>Selamat datang di RiELA YOUTH</h2>
+    <p>Toko fashion anak muda kekinian yang cocok untuk semua gaya.</p>
+  </section>
+
+  <main id="Produk">
+    <section class="produk-container">
+  <div class="produk">
+    <a href="produk1.html">
+      <img src="images/errorbrain.jpeg" alt="Errorbrain Shirt" />
+      <h3>Errorbrain Shirt</h3>
+    </a>
+    <p>Rp 289.000</p>
+    <p class="deskripsi-singkat">bergaya streetwear dengan bahan premium dan desain unik.</p>
+    <button onclick="tambahKeKeranjang('Errorbrain Shirt', 289000)">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="produk">
+    <a href="produk2.html">
+      <img src="images/meteors.jpeg" alt="Meteors Shirt" />
+      <h3>Meteors Shirt</h3>
+    </a>
+    <p>Rp 259.000</p>
+    <p class="deskripsi-singkat"> yang stylish dan adem, bahan cocok untuk kegiatan santai.</p>
+    <button onclick="tambahKeKeranjang('Meteors Shirt', 259000)">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="produk">
+    <a href="produk3.html">
+      <img src="images/caps.jpeg" alt="Caps" />
+      <h3>Caps</h3>
+    </a>
+    <p>Rp 139.000</p>
+    <p class="deskripsi-singkat">Topi snapback klasik dengan logo bordir dan bahan kanvas berkualitas.</p>
+    <button onclick="tambahKeKeranjang('Caps', 139000)">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="produk">
+    <a href="produk4.html">
+      <img src="images/baggypants.jpeg" alt="Baggypants" />
+      <h3>Baggypants</h3>
+    </a>
+    <p>Rp 279.000</p>
+    <p class="deskripsi-singkat"> bahan tebal cprduroy bergaari sty, kaum anak muda fashionable styles.</p>
+    <button onclick="tambahKeKeranjang('Baggypants', 279000)">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="produk">
+    <a href="produk5.html">
+      <img src="images/hoodie.jpeg" alt="Hoodie" />
+      <h3>Hoodie</h3>
+    </a>
+    <p>Rp 499.000</p>
+    <p class="deskripsi-singkat">Hoodie tebal dan nyaman cocok untuk aktivitas outdoor santai </p>
+    <button onclick="tambahKeKeranjang('Hoodie', 270000)">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="produk">
+    <a href="produk6.html">
+      <img src="images/totebag.jpeg" alt="Totebag" />
+      <h3>Totebag</h3>
+    </a>
+    <p>Rp 80.000</p>
+    <p class="deskripsi-singkat">Tas jinjing simpel dari kanvas tebal cocok kuliah dan hangout .</p>
+    <button onclick="tambahKeKeranjang('Totebag', 80000)">Tambah ke Keranjang</button>
+  </div>
+</section>
+  </main>
+
+  <section id="keranjang">
+    <h2>Keranjang Belanja</h2>
+    <ul id="daftar-keranjang"></ul>
+    <p><strong>Total:</strong> Rp <span id="total-harga">0</span></p>
+    <button onclick="kosongkanKeranjang()">Kosongkan Keranjang</button>
+    <button onclick="checkoutWA()">Checkout via WhatsApp</button>
+  </section>
+
+  <section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <form>
+      <label for="nama">Nama:</label><br>
+      <input type="text" id="nama" name="nama" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="pesan">Pesan:</label><br>
+      <textarea id="pesan" name="pesan" rows="5" required></textarea><br><br>
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <div class="info-kontak">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:rielayouth@email.com">rielayouth@email.com</a></p>
+      <p><i class="fab fa-instagram"></i> <a href="https://instagram.com/riela.youth" target="_blank">@riela.youth</a></p>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>RiELA YOUTH adalah brand lokal yang menghadirkan fashion stylish dan kekinian untuk para remaja dan anak muda Indonesia. Kami berkomitmen untuk memberikan produk berkualitas tinggi dengan harga terjangkau, serta pelayanan yang ramah dan cepat.</p>
+    <p>Berdiri sejak 2025, kami percaya bahwa setiap anak muda berhak tampil keren dan percaya diri. Terima kasih telah mendukung produk lokal!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Halaman E-commerce RiELA YOUTH. All rights reserved.
+  </footer>
+
+  <script>
+    let keranjang = [];
+
+    function tambahKeKeranjang(nama, harga) {
+      keranjang.push({ nama, harga });
+      alert(nama + " ditambahkan ke keranjang!");
+      tampilkanKeranjang();
+    }
+
+    function tampilkanKeranjang() {
+      const daftar = document.getElementById('daftar-keranjang');
+      const total = document.getElementById('total-harga');
+      daftar.innerHTML = '';
+      let totalHarga = 0;
+
+      keranjang.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.nama + " - Rp " + item.harga.toLocaleString('id-ID');
+        daftar.appendChild(li);
+        totalHarga += item.harga;
+      });
+
+      total.textContent = totalHarga.toLocaleString('id-ID');
+    }
+
+    function kosongkanKeranjang() {
+      keranjang = [];
+      tampilkanKeranjang();
+    }
+
+    function checkoutWA() {
+      if (keranjang.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+      }
+
+      let pesan = "Halo Admin RiELA YOUTH, saya ingin memesan:\n\n";
+      let totalHarga = 0;
+
+      keranjang.forEach(item => {
+        pesan += `- ${item.nama} (Rp ${item.harga.toLocaleString('id-ID')})\n`;
+        totalHarga += item.harga;
+      });
+
+      pesan += `\nTotal: Rp ${totalHarga.toLocaleString('id-ID')}`;
+
+      let nomorWA = "6285135175322";
+      let url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
